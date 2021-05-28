@@ -1,0 +1,13 @@
+@import "../../vars";
+
+.top-bar {
+  background-color: $ravn-black-color;
+  color: $ravn-gray-color;
+  padding: 10px;
+  max-height: 30px;
+  font-family: "SF UI Display Bold", sans-serif;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
