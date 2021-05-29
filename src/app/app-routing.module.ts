@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PeopleComponent } from './people/people.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/people', pathMatch: 'full' },
-  { path: 'people', component: PeopleComponent },
+  { path: 'people', redirectTo: 'people', pathMatch: 'full' },
+  { path: 'people', loadChildren: () => import('./features/people/people.module').then(m => m.PeopleModule) },
+  {
+    path: '**',
+    redirectTo: 'people'
+  }
 ];
 
 @NgModule({
