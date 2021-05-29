@@ -1,0 +1,119 @@
+.container-loading {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+  .text {
+    color: #828282;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "SF UI Display Bold", sans-serif;
+    margin-left: 5px;
+  }
+}
+
+.container-spinner {
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  overflow: hidden;
+  background: #ffffff;
+
+  @keyframes spinner-circle {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .spinner-circle div {
+    left: 47px;
+    top: 4px;
+    position: absolute;
+    animation: spinner-circle linear 1s infinite;
+    background: #bdbdbd;
+    width: 6px;
+    height: 12px;
+    border-radius: 3px / 3.72px;
+    transform-origin: 3px 26px;
+  }
+  .spinner-circle div:nth-child(1) {
+    transform: rotate(0deg);
+    animation-delay: -0.9166666666666666s;
+    background: #bdbdbd;
+  }
+  .spinner-circle div:nth-child(2) {
+    transform: rotate(30deg);
+    animation-delay: -0.8333333333333334s;
+    background: #bdbdbd;
+  }
+  .spinner-circle div:nth-child(3) {
+    transform: rotate(60deg);
+    animation-delay: -0.75s;
+    background: #bdbdbd;
+  }
+  .spinner-circle div:nth-child(4) {
+    transform: rotate(90deg);
+    animation-delay: -0.6666666666666666s;
+    background: #bdbdbd;
+  }
+  .spinner-circle div:nth-child(5) {
+    transform: rotate(120deg);
+    animation-delay: -0.5833333333333334s;
+    background: #bdbdbd;
+  }
+  .spinner-circle div:nth-child(6) {
+    transform: rotate(150deg);
+    animation-delay: -0.5s;
+    background: #bdbdbd;
+  }
+  .spinner-circle div:nth-child(7) {
+    transform: rotate(180deg);
+    animation-delay: -0.4166666666666667s;
+    background: #bdbdbd;
+  }
+  .spinner-circle div:nth-child(8) {
+    transform: rotate(210deg);
+    animation-delay: -0.3333333333333333s;
+    background: #bdbdbd;
+  }
+  .spinner-circle div:nth-child(9) {
+    transform: rotate(240deg);
+    animation-delay: -0.25s;
+    background: #bdbdbd;
+  }
+  .spinner-circle div:nth-child(10) {
+    transform: rotate(270deg);
+    animation-delay: -0.16666666666666666s;
+    background: #bdbdbd;
+  }
+  .spinner-circle div:nth-child(11) {
+    transform: rotate(300deg);
+    animation-delay: -0.08333333333333333s;
+    background: #bdbdbd;
+  }
+  .spinner-circle div:nth-child(12) {
+    transform: rotate(330deg);
+    animation-delay: 0s;
+    background: #bdbdbd;
+  }
+  .loadingio-spinner-spinner-f6tcbnl5qib {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    overflow: hidden;
+    background: #ffffff;
+  }
+  .spinner-circle {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translateZ(0) scale(0.4);
+    backface-visibility: hidden;
+    transform-origin: 0 0; /* see note above */
+  }
+  .spinner-circle div {
+    box-sizing: content-box;
+  }
+}
