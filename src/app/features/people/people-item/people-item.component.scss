@@ -1,0 +1,11 @@
+@import "../../../../vars";
+
+.people__item {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  border-bottom: 1px solid $ravn-gray-color;
+  .icon__right {
+    width: 14px;
+  }
+}

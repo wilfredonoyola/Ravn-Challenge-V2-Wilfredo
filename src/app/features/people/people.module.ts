@@ -1,13 +1,20 @@
   
 import { NgModule } from '@angular/core';
 
+import { PeopleRoutingModule } from './people-routing.module';
+import { PeopleListComponent } from './people-list/people-list.component';
+import { PeopleItemComponent } from './people-item/people-item.component';
+
 import { SharedModule } from '../../shared/shared.module';
 
-import { PeopleRoutingModule } from './people-routing.module';
-import { PeopleComponent } from './people.component';
-
 @NgModule({
-  declarations: [PeopleComponent],
-  imports: [SharedModule, PeopleRoutingModule]
+  declarations: [
+    PeopleListComponent, 
+    PeopleItemComponent
+  ],
+  imports: [
+    SharedModule, 
+    PeopleRoutingModule
+  ]
 })
 export class PeopleModule {}
