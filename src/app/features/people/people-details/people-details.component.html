@@ -1,1 +1,31 @@
-<p>people-details works!</p>
+<div class="item-people-detail">
+  <div class="item-details-header">General Information</div>
+  <div class="item-detail-list">
+    <div class="item-detail-characteristics">
+      <div class="item-property">Eye Color</div>
+      <div class="item-value">{{ person.eyeColor }}</div>
+    </div>
+    <div class="item-detail-characteristics">
+      <div class="item-property">Hair Color</div>
+      <div class="item-value">{{ person.hairColor }}</div>
+    </div>
+    <div class="item-detail-characteristics">
+      <div class="item-property">Skin Color</div>
+      <div class="item-value">{{ person.skinColor }}</div>
+    </div>
+    <div class="item-detail-characteristics">
+      <div class="item-property">Birth Year</div>
+      <div class="item-value">{{ person.birthYear }}</div>
+    </div>
+  </div>
+
+  <div class="item-details-header">Vehicles</div>
+  <div class="item-detail-list">
+    <div
+      class="item-detail-characteristics"
+      *ngFor="let item of person.vehicleConnection.vehicles"
+    >
+      <div class="item-property">{{ item.name }}</div>
+    </div>
+  </div>
+</div>

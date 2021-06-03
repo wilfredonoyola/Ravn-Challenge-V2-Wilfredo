@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { PeopleListComponent } from './people-list/people-list.component';
+import { SharedModule } from '../../shared/shared.module';
 
+import { PeopleListComponent } from './people-list/people-list.component';
 import { PeopleDetailsComponent } from './people-details/people-details.component';
 
 const routes: Routes = [
@@ -23,7 +24,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes), SharedModule],
   exports: [RouterModule]
 })
 export class PeopleRoutingModule {}

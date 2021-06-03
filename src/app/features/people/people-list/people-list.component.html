@@ -1,10 +1,20 @@
 <div class="row">
-    <div class="column left">
-        <app-people-item *ngFor="let person of people$ | async" [person]="person"></app-people-item>
-        List left people
-        <app-loading></app-loading>
-    </div>
-    <div class="column right">
-        Detail to a person
-    </div>
+  <div class="column left">
+      <ng-template #showEmpty>
+        <div class="not-results">
+          <h5 class="title">Failed to Load Data</h5>
+        </div>
+      </ng-template>
+      <div *ngIf="people; else showEmpty" class="container-list" [infiniteScrollDistance]="10" [alwaysCallback]="true"
+        [scrollWindow]="false" (scrolled)="onScrollDown()" infiniteScroll>
+        <div class="inner-scroll">
+          <app-people-item *ngFor="let person of people" [person]="person" (click)="getDetailPerson(person)"></app-people-item>
+      
+          <app-loading [isLoading]="isLoading"></app-loading>
+        </div>
+      </div>
+  </div>
+  <div class="column right">
+      <app-people-details [person]="personDetail" *ngIf="personDetail"></app-people-details>
+  </div>
 </div>

@@ -1,17 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { People } from 'src/app/shared/interfaces/data.interface';
+import { Component, Input } from '@angular/core'
+import { People } from 'src/app/shared/interfaces/data.interface'
 
 @Component({
   selector: 'app-people-item',
   templateUrl: './people-item.component.html',
-  styleUrls: ['./people-item.component.scss']
+  styleUrls: ['./people-item.component.scss'],
 })
-export class PeopleItemComponent implements OnInit {
+export class PeopleItemComponent {
   @Input()
-  person!: People;
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  person!: People
+  constructor() {}
 }

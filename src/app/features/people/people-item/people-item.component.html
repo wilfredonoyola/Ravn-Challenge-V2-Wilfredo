@@ -1,7 +1,9 @@
-<div class="people__item">
-    <div class="people__content">
-        <div class="people-name">{{person.name}}</div>
-        <div class="people-homeworld-name">{{person.homeworld.name}}</div> 
-    </div>   
-    <img class="icon__right" src="/assets/svg/right-arrow-icon.svg" alt="">
+<div class="people-item">
+  <div class="content">
+    <div class="person-name">{{ person.name }}</div>
+    <div class="homeworld-name">
+      {{ person.species ? 'Droid' : 'Human' }} from {{ person.homeworld.name }}
+    </div>
+  </div>
+  <img class="icon-right" src="/assets/svg/right-arrow-icon.svg" alt="" />
 </div>
