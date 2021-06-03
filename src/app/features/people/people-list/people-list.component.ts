@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import {
   ListPeople,
   Pagination,
@@ -19,7 +20,11 @@ export class PeopleListComponent implements OnInit {
   people: People[] = [];
   personDetail: People | undefined;
 
-  constructor(private dataSvc: DataService) {}
+  constructor(
+    private dataSvc: DataService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.getData();
@@ -63,11 +68,4 @@ export class PeopleListComponent implements OnInit {
     }
   }
 
-  /**
-   * Gets the detail information for a person.
-   * @param person
-   */
-  getDetailPerson(person: People) {
-    this.personDetail = person;
-  }
 }

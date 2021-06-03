@@ -54,6 +54,36 @@ export class DataService {
   }
 
   /**
+   * Return a new query to detail of a person
+   * @param personId - number of a person id
+   * @returns
+   */
+  private getQueriePersonDetail(personId: number): DocumentNode {
+    const query = gql`
+      {
+        person(id: "${personId}") {
+          id
+          name
+          homeworld {
+            name
+            id
+          }
+          eyeColor
+          hairColor
+          skinColor
+          birthYear
+          vehicleConnection {
+            vehicles {
+              name
+            }
+          }
+        }
+      }
+    `;
+    return query;
+  }
+
+  /**
    * Get people by pagination
    * @param first - number of results per page
    * @param after - optional value, pointer to get other results
@@ -71,6 +101,26 @@ export class DataService {
         pluck('data', 'allPeople'),
         tap(() => {}),
         catchError(this.handleError<any[]>('getPeople', []))
+      );
+  }
+
+  /**
+   * Get person detail
+   * @param personId - number id to get a detail person
+   * @returns
+   */
+  getPersonDetail(personId: number): Observable<any> {
+    const QUERY = this.getQueriePersonDetail(personId);
+
+    return this.apollo
+      .watchQuery<any>({
+        query: QUERY,
+      })
+      .valueChanges.pipe(
+        take(1),
+        pluck('data', 'person'),
+        tap(() => {}),
+        catchError(this.handleError<any[]>('getPersonDetail', []))
       );
   }
 

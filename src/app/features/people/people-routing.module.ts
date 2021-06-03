@@ -7,16 +7,13 @@ import { PeopleListComponent } from './people-list/people-list.component';
 import { PeopleDetailsComponent } from './people-details/people-details.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'people', pathMatch: 'full' },
+  // { path: '', redirectTo: 'people', pathMatch: 'full' },
   {
     path: '',
+    component: PeopleListComponent,
     children: [
       {
-        path: '',
-        component: PeopleListComponent,
-      },
-      {
-        path: 'details',
+        path: 'details/:personId',
         component: PeopleDetailsComponent,
       },
     ],
