@@ -1,4 +1,3 @@
-  
 import { NgModule } from '@angular/core';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
@@ -11,14 +10,10 @@ import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   declarations: [
-    PeopleListComponent, 
+    PeopleListComponent,
     PeopleItemComponent,
-    PeopleDetailsComponent
+    PeopleDetailsComponent,
   ],
-  imports: [
-    SharedModule, 
-    PeopleRoutingModule,
-    InfiniteScrollModule
-  ]
+  imports: [SharedModule, PeopleRoutingModule, InfiniteScrollModule],
 })
 export class PeopleModule {}

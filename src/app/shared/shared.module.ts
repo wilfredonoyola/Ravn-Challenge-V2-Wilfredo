@@ -18,8 +18,7 @@ import { LoadingComponent } from './loading/loading.component';
     RouterModule,
 
     // local
-    LoadingComponent
-    
-  ]
+    LoadingComponent,
+  ],
 })
 export class SharedModule {}

@@ -1,7 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "analytics": "d18760b3-3acd-45df-aa97-6cb82cd0cf0b"
+    "analytics": "d18760b3-3acd-45df-aa97-6cb82cd0cf0b",
+    "defaultCollection": "@angular-eslint/schematics"
   },
   "version": 1,
   "newProjectRoot": "projects",
@@ -36,7 +37,12 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+             "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/scss"
+              ]
+            }
           },
           "configurations": {
             "production": {
@@ -105,6 +111,15 @@
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
         }
       }
