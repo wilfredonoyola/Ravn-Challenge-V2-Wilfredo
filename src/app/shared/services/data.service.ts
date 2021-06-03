@@ -29,22 +29,12 @@ export class DataService {
         }
         people {
           id
-          name
-          eyeColor
-          hairColor
-          skinColor
-          birthYear      
+          name    
           homeworld{
             name
           }
           species{
             name
-          }
-
-          vehicleConnection{
-            vehicles{
-              name   
-            }
           }
         }
       }

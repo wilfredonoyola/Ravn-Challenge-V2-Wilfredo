@@ -67,5 +67,4 @@ export class PeopleListComponent implements OnInit {
       console.log('No more results to display');
     }
   }
-
 }
