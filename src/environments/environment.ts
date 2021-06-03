@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  urlApi: 'https://swapi-graphql.netlify.app/.netlify/functions/index'
+  urlApi: 'https://swapi-graphql.netlify.app/.netlify/functions/index',
 };
 
 /*

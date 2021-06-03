@@ -10,21 +10,18 @@ const routes: Routes = [
   { path: '', redirectTo: 'people', pathMatch: 'full' },
   {
     path: '',
+    component: PeopleListComponent,
     children: [
       {
-        path: '',
-        component: PeopleListComponent
+        path: 'details/:personId',
+        component: PeopleDetailsComponent,
       },
-       {
-        path: 'details',
-        component: PeopleDetailsComponent
-      }
-    ]
-  }
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes), SharedModule],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class PeopleRoutingModule {}
