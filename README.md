@@ -24,13 +24,15 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice.
 
 ## Tree Structure
 
-.
-└── src
-├── app
-│   ├── core
-│   ├── features
-│   └── shared
-└── scss
+```
+  .
+  └── src
+      ├── app
+      │   ├── core
+      │   ├── features
+      │   └── shared
+      └── scss
+```
 
 ## Functionality
 
