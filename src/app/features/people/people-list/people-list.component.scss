@@ -1,5 +1,7 @@
 @import "colors";
 @import "scrollbar";
+@import "utils";
+
 .row {
   display: flex;
   margin-top: 45px;
@@ -31,7 +33,7 @@
 .not-results {
   text-align: center;
   .title {
-    font-family: "SF UI Display Bold", sans-serif;
+    font-family: $font-family;
     font-weight: bold;
     font-size: 16px;
     color: $color-red;
