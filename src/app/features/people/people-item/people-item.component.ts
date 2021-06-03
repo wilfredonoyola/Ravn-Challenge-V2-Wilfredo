@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core'
-import { People } from 'src/app/shared/interfaces/data.interface'
+import { Component, Input } from '@angular/core';
+import { People } from 'src/app/shared/interfaces/data.interface';
 
 @Component({
   selector: 'app-people-item',
@@ -8,6 +8,6 @@ import { People } from 'src/app/shared/interfaces/data.interface'
 })
 export class PeopleItemComponent {
   @Input()
-  person!: People
+  person!: People;
   constructor() {}
 }

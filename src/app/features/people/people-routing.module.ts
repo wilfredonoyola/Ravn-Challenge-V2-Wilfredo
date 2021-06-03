@@ -13,18 +13,18 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: PeopleListComponent
+        component: PeopleListComponent,
       },
-       {
+      {
         path: 'details',
-        component: PeopleDetailsComponent
-      }
-    ]
-  }
+        component: PeopleDetailsComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes), SharedModule],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class PeopleRoutingModule {}

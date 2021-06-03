@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core'
-import { Apollo, gql } from 'apollo-angular'
-import { DocumentNode } from 'graphql'
-import { Observable, of } from 'rxjs'
-import { catchError, pluck, take, tap } from 'rxjs/operators'
+import { Injectable } from '@angular/core';
+import { Apollo, gql } from 'apollo-angular';
+import { DocumentNode } from 'graphql';
+import { Observable, of } from 'rxjs';
+import { catchError, pluck, take, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -14,10 +14,10 @@ export class DataService {
    * Return a new query
    * @param first - number of results per page
    * @param after - optional value, pointer to get other results
-   * @returns 
+   * @returns
    */
   private getQuerie(first: number, after?: string): DocumentNode {
-    const _after = after ? after : ''
+    const _after = after ? after : '';
     const query = gql`
     {
       allPeople(first: ${first}, after: "${_after}") {
@@ -49,18 +49,18 @@ export class DataService {
         }
       }
     }
-    `
-    return query
+    `;
+    return query;
   }
-  
+
   /**
    * Get people by pagination
    * @param first - number of results per page
    * @param after - optional value, pointer to get other results
-   * @returns 
+   * @returns
    */
   getPeopleByPage(first: number, after?: string): Observable<any> {
-    const QUERY = this.getQuerie(first, after)
+    const QUERY = this.getQuerie(first, after);
 
     return this.apollo
       .watchQuery<any>({
@@ -71,7 +71,7 @@ export class DataService {
         pluck('data', 'allPeople'),
         tap(() => {}),
         catchError(this.handleError<any[]>('getPeople', []))
-      )
+      );
   }
 
   /**
@@ -86,15 +86,15 @@ export class DataService {
       // console.error(error) // log to console instead
 
       // TODO: better job of transforming error for user consumption
-      this.log(`${operation} failed: ${error.message}`)
+      this.log(`${operation} failed: ${error.message}`);
 
       // Let the app keep running by returning an empty result.
-      return of(result as T)
-    }
+      return of(result as T);
+    };
   }
 
   /** Log a HeroService message with the MessageService */
   private log(message: string) {
-    console.log(`dataService: ${message}`)
+    console.log(`dataService: ${message}`);
   }
 }

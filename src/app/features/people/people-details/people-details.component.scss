@@ -1,11 +1,11 @@
-@import '../../../../scss/colors';
+@import "colors";
 .item-people-detail {
   margin-left: 80px;
   margin-right: 80px;
 
   .item-details-header {
     color: $color-black;
-    font-family: 'SF UI Display Bold', sans-serif;
+    font-family: "SF UI Display Bold", sans-serif;
     font-weight: 700;
     font-size: 17px;
     padding: 0;
@@ -16,7 +16,7 @@
     .item-detail-characteristics {
       display: flex;
       justify-content: space-between;
-      font-family: 'SF UI Display Bold', sans-serif;
+      font-family: "SF UI Display Bold", sans-serif;
       font-size: 16px;
       font-weight: 700;
       border-bottom: 1px solid $color-gray;

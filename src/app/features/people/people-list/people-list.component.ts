@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit } from '@angular/core';
 import {
   ListPeople,
   Pagination,
   People,
-} from 'src/app/shared/interfaces/data.interface'
+} from 'src/app/shared/interfaces/data.interface';
 
-import { DataService } from 'src/app/shared/services/data.service'
+import { DataService } from 'src/app/shared/services/data.service';
 
 @Component({
   selector: 'app-people-list',
@@ -13,45 +13,43 @@ import { DataService } from 'src/app/shared/services/data.service'
   styleUrls: ['./people-list.component.scss'],
 })
 export class PeopleListComponent implements OnInit {
-  pagination: Pagination | undefined
-  resultsPerPage: number = 5
-  isLoading: boolean = true
-  people: People[] = []
-  personDetail: People | undefined
+  pagination: Pagination | undefined;
+  resultsPerPage: number = 5;
+  isLoading: boolean = true;
+  people: People[] = [];
+  personDetail: People | undefined;
 
   constructor(private dataSvc: DataService) {}
 
   ngOnInit(): void {
-    this.getData()
+    this.getData();
   }
   /** 
    Get the person list from the shared service.
    It handles the logic when it is the first face and also when there are more pages with data.
   **/
   getData(): void {
-    this.isLoading = true
+    this.isLoading = true;
     this.dataSvc
       .getPeopleByPage(this.resultsPerPage, this.pagination?.endCursor)
       .subscribe(
-        (ApiResponse: ListPeople) => {
-          this.pagination = ApiResponse.pageInfo
+        (apiResponse: ListPeople) => {
+          this.pagination = apiResponse.pageInfo;
 
           // Added the new people to list
-          if (this.people && ApiResponse.people) {
-            ApiResponse.people.map((person: People) => {
-              this.people.push(person)
-            })
+          if (this.people && apiResponse.people) {
+            this.people = [...this.people, ...apiResponse.people];
           } else {
             // Firts people to display
-            this.people = ApiResponse.people
-            this.pagination = ApiResponse.pageInfo
+            this.people = apiResponse.people;
+            this.pagination = apiResponse.pageInfo;
           }
         },
         (err) => console.log('Observer got an error: ' + err),
         () => {
-          this.isLoading = false
+          this.isLoading = false;
         }
-      )
+      );
   }
 
   /**
@@ -59,9 +57,9 @@ export class PeopleListComponent implements OnInit {
    */
   onScrollDown(): void {
     if (this.pagination?.hasNextPage) {
-      this.getData()
+      this.getData();
     } else {
-      console.log('No more results to display')
+      console.log('No more results to display');
     }
   }
 
@@ -70,6 +68,6 @@ export class PeopleListComponent implements OnInit {
    * @param person
    */
   getDetailPerson(person: People) {
-    this.personDetail = person
+    this.personDetail = person;
   }
 }

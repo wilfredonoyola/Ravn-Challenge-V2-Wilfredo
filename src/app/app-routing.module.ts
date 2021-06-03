@@ -3,15 +3,19 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', redirectTo: 'people', pathMatch: 'full' },
-  { path: 'people', loadChildren: () => import('./features/people/people.module').then(m => m.PeopleModule) },
+  {
+    path: 'people',
+    loadChildren: () =>
+      import('./features/people/people.module').then((m) => m.PeopleModule),
+  },
   {
     path: '**',
-    redirectTo: 'people'
-  }
+    redirectTo: 'people',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

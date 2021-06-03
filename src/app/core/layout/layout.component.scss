@@ -1,4 +1,4 @@
-@import '../../../scss/colors';
+@import "colors";
 
 .top-bar {
   position: fixed;
@@ -8,7 +8,7 @@
   color: $color-gray;
   padding: 10px;
   max-height: 30px;
-  font-family: 'SF UI Display Bold', sans-serif;
+  font-family: "SF UI Display Bold", sans-serif;
   font-size: 18px;
   display: flex;
   align-items: center;

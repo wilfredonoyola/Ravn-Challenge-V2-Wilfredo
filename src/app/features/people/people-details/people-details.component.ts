@@ -4,14 +4,10 @@ import { People } from 'src/app/shared/interfaces/data.interface';
 @Component({
   selector: 'app-people-details',
   templateUrl: './people-details.component.html',
-  styleUrls: ['./people-details.component.scss']
+  styleUrls: ['./people-details.component.scss'],
 })
-export class PeopleDetailsComponent implements OnInit {
+export class PeopleDetailsComponent {
   @Input()
   person!: People;
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  constructor() {}
 }
