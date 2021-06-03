@@ -59,6 +59,16 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice.
 - Add unit tests
 - Deploy to a production server
 
+## [Important] Some decisions
+
+In the infinite scroll part, I enabled an always visible scroll so that the user has the option to load more articles when the first 5 results are shown.
+
+In a real case:
+Normally, you could load all the results in the available height space of the window or DIV and display the scroll only if the content no longer fits in the content. But for this case it was required to show 5 results each time. So for the first time with "overflow-y: auto" the scroll will not be shown and likewise there will be no way to scroll down.
+
+Resume:
+I have added a height greater than 100% for the first load of the elements to always show a scroll.
+
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page or contact me to wilfredon163@gmail.com
