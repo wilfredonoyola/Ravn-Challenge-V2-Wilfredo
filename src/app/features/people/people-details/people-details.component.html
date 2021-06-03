@@ -20,10 +20,11 @@
   </div>
 
   <div class="item-details-header">Vehicles</div>
-  <div class="item-detail-list">
+  <div class="item-detail-list" *ngIf="person.vehicleConnection">
     <div
       class="item-detail-characteristics"
       *ngFor="let item of person.vehicleConnection.vehicles"
+      
     >
       <div class="item-property">{{ item.name }}</div>
     </div>

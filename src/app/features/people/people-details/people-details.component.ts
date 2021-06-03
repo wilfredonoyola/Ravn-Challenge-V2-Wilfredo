@@ -24,6 +24,9 @@ export class PeopleDetailsComponent implements OnInit {
     });
   }
 
+  /**
+   * Get the detail of a person from a service through a call to GrahpQL
+   */
   getPerson(): void {
     const id = Number(this.route.snapshot.paramMap.get('personId'));
     this.dataSvc.getPersonDetail(this.personId).subscribe(
