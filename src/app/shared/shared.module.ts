@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { LoadingComponent } from './loading/loading.component';
 import { RouterModule } from '@angular/router';
+
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [LoadingComponent],
@@ -18,6 +19,7 @@ import { RouterModule } from '@angular/router';
 
     // local
     LoadingComponent
+    
   ]
 })
 export class SharedModule {}

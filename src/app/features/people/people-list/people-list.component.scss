@@ -1,21 +1,39 @@
-@import "../../../../vars";
-
+@import '../../../../scss/colors';
+@import '../../../../scss/scrollbar';
 .row {
   display: flex;
-  align-items: flex-start;
-
-  .column {
-    padding-top: 10px;
-    padding-left: 15px;
-  }
+  margin-top: 45px;
+  padding: 5px;
+  height: 100vh;
 
   .column.left {
-    width: 20%;
-    border-right: 1px solid $ravn-gray-color;
-    height: 100vh;
+    width: 350px;
+    border-right: 1px solid $color-gray;
+    height: 100%;
+    @extend .scrollbar;
+    .container-list {
+      height: 95%;
+      overflow-y: auto;
+      overflow-x: hidden;
+
+      .inner-scroll {
+        height: 105%;
+      }
+    }
   }
 
   .column.right {
-    width: 80%;
+    width: 75%;
+    display: table-row;
+  }
+}
+
+.not-results {
+  text-align: center;
+  .title {
+    font-family: 'SF UI Display Bold', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: $color-red;
   }
 }

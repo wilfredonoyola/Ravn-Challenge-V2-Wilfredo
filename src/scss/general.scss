@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+/** Font Family **/
+@font-face {
+  font-family: 'SF UI Display Bold';
+  font-weight: normal;
+  src: local('SF UI Display Bold'),
+    url(/assets/fonts/sf-ui-display-bold-58646a511e3d9.ttf) format('truetype');
+}
+
+body,
+html {
+  margin: 0px;
+}
+
+main {
+  height: -webkit-fill-available;
+  max-height: 100vh;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
