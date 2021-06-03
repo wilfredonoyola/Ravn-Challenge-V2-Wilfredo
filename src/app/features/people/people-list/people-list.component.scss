@@ -1,0 +1,39 @@
+@import '../../../../scss/colors';
+@import '../../../../scss/scrollbar';
+.row {
+  display: flex;
+  margin-top: 45px;
+  padding: 5px;
+  height: 100vh;
+
+  .column.left {
+    width: 350px;
+    border-right: 1px solid $color-gray;
+    height: 100%;
+    @extend .scrollbar;
+    .container-list {
+      height: 95%;
+      overflow-y: auto;
+      overflow-x: hidden;
+
+      .inner-scroll {
+        height: 105%;
+      }
+    }
+  }
+
+  .column.right {
+    width: 75%;
+    display: table-row;
+  }
+}
+
+.not-results {
+  text-align: center;
+  .title {
+    font-family: 'SF UI Display Bold', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: $color-red;
+  }
+}

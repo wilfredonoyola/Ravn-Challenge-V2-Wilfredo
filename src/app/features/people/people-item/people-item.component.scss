@@ -1,0 +1,25 @@
+@import '../../../../scss/colors';
+
+.people-item {
+  display: flex;
+  padding: 14px;
+  justify-content: space-between;
+  border-bottom: 1px solid $color-gray;
+  .person-name {
+    color: $color-black;
+    font-family: 'SF UI Display Bold', sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+    margin-top: 4px;
+  }
+
+  .homeworld-name {
+    color: $color-light;
+    font-family: 'SF UI Display Bold', sans-serif;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  .icon-right {
+    width: 11px;
+  }
+}
